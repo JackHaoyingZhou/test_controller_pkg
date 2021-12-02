@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
     usleep(1000000);
 
     // set up services to talk to the servers
-    const std::string actuator_config_file = "/home/nathaniel/catkin_ws/src/test_controller_pkg/models/kuka.yaml";
+    const std::string actuator_config_file = "/home/zhyjack/surgical_task2/src/test_controller_pkg/models/kuka_test/kuka_test.yaml";
     ros::Publisher desired_pub = n.advertise<std_msgs::Float32MultiArray>("q_desired", 1000);
     ros::Publisher actual_pub = n.advertise<std_msgs::Float32MultiArray>("q_actual", 1000);
     ros::ServiceClient client_model = n.serviceClient<rbdl_server::RBDLModel>("CreateModel");

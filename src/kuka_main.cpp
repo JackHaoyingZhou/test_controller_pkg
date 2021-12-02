@@ -42,7 +42,7 @@ void make_poly(double q0, double qf, double tf, std::vector<double>&q, std::vect
 
 int main(int argc, char* argv[])
 {     
-    const std::string actuator_config_file = "/home/nathaniel/catkin_ws/src/test_controller_pkg/models/kuka.yaml";
+    const std::string actuator_config_file = "/home/nathaniel/catkin_ws/src/test_controller_pkg/models/kuka_test/kuka_test.yaml";
     
     Client client;
     client.connect();

@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
         std::cerr << argc << std::endl;
         exit(0);
     }
-    //    const std::string actuator_config_file = "/home/nathaniel/catkin_ws/src/test_controller_pkg/models/cube_robot/test-robot.yaml";
+       // const std::string actuator_config_file = "/home/zhyjack/surgical_task2/src/test_controller_pkg/models/kuka_test/kuka_test.yaml";
 
     std::string  actuator_config_file = argv[1];
 
@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
     usleep(10000);
     ros::NodeHandle n;
     rigidBodyPtr handler;
-    handler = client.getRigidBody("base", true);
+    handler = client.getRigidBody("baselink", true); //baselink
     ros::Rate rate(1000);
     usleep(1000000);
 
@@ -95,6 +95,9 @@ int main(int argc, char* argv[])
             std::cout<<tau[0]<<std::endl;
             std::cout<<tau[1]<<std::endl;
             std::cout<<tau[2]<<std::endl;
+            std::cout<<tau[3]<<std::endl;
+            std::cout<<tau[4]<<std::endl;
+            std::cout<<tau[5]<<std::endl;
             std::vector<float> tau2(joint_msg.response.control_output.effort.begin(), joint_msg.response.control_output.effort.end());
             tau2[0] = tau[0];
             

@@ -17,24 +17,26 @@ int main(int argc, char **argv)
 
 
     // set up gains for the kuka arm
-    Eigen::MatrixXd Kp = Eigen::MatrixXd::Ones(7,7);
-    Eigen::MatrixXd Kd = Eigen::MatrixXd::Zero(7,7);
+    Eigen::MatrixXd Kp = Eigen::MatrixXd::Ones(8,8);
+    Eigen::MatrixXd Kd = Eigen::MatrixXd::Zero(8,8);
     
-    Kp(0,0) = 100.0;
-    Kp(1,1) = 100.0;
-    Kp(2,2) = 100.0;
-    Kp(3,3) = 100.0;
-    Kp(4,4) = 100.0;
-    Kp(5,5) = 100.0;
-    Kp(6,6) = 100.0;
+    Kp(0,0) = 0.01;
+    Kp(1,1) = 0.01;
+    Kp(2,2) = 0.01;
+    Kp(3,3) = 0.01;
+    Kp(4,4) = 0.01;
+    Kp(5,5) = 0.01;
+    Kp(6,6) = 0.01;
+    Kp(7,7) = 0.01;
 
-    Kd(0,0) = 4.0;
-    Kd(1,1) = 4.0;
-    Kd(2,2) = 4.0;
-    Kd(3,3) = 4.0;
-    Kd(4,4) = 4.0;
-    Kd(5,5) = 0.40;
-    Kd(6,6) = 0.40;
+    Kd(0,0) = 0.0004;
+    Kd(1,1) = 0.0004;
+    Kd(2,2) = 0.0004;
+    Kd(3,3) = 0.004;
+    Kd(4,4) = 0.0004;
+    Kd(5,5) = 0.0004;
+    Kd(6,6) = 0.00001;
+    Kd(7,7) = 0.00001;
   
     PDController controller(Kp,Kd);
 
